@@ -1,0 +1,93 @@
+const products = [
+    {
+        id: 1,
+        image: 'anya.jpg',
+        name: 'Fate/Grand Order - Vol.5 Plush Keychain SEGA x Sanrio',
+        series: 'Fate/Grand Order',
+        character: 'test',
+        material: 'test',
+        productType: 'Figure',
+        manufacturer: 'test',
+        dimensions: 'test',
+        price: 24.99,
+        instock: 5
+    },
+    {
+        id: 2,
+        image: 'anya.jpg',
+        name: 'One Piece - Yamato ONE PIECE Portrait.Of.Pirates WA-MAXIMUM Figure MegaHouse',
+        series: 'One Piece',
+        character: 'test',
+        material: 'test',
+        productType: 'Acrylic Stand',
+        manufacturer: 'test',
+        dimensions: 'test',
+        price: 18.99,
+        instock: 5
+    },
+    {
+        id: 3,
+        image: 'anya.jpg',
+        name: 'Hatsune Miku - Hatsune Miku White Acghot 39 T-shirt Moeyu',
+        series: 'Hatsune Miku',
+        character: 'test',
+        material: 'test',
+        productType: 'Charms',
+        manufacturer: 'test',
+        dimensions: 'test',
+        price: 21.99,
+        instock: 5
+    },
+    {
+        id: 4,
+        image: 'anya.jpg',
+        name: 'MY HERO ACADEMIA - Katsuki Bakugo (THE AMAZING HEROES vol.14) Prize Figure Banpresto',
+        series: 'My Hero Academia',
+        character: 'test',
+        material: 'test',
+        productType: 'Clothing',
+        manufacturer: 'test',
+        dimensions: 'test',
+        price: 30.99,
+        instock: 5
+    },
+    {
+        id: 5,
+        image: 'anya.jpg',
+        name: 'The Quintessential Quintuplets - Miku Nakano',
+        series: 'The Quintessential Quintuplets',
+        character: 'test',
+        material: 'test',
+        productType: 'Plushies',
+        manufacturer: 'test',
+        dimensions: 'test',
+        price: 10.99,
+        instock: 5
+    },
+    {
+        id: 6,
+        image: 'anya.jpg',
+        name: 'Demon Slayer - Tanjiro Kamado (2nd re-run) Nendoroid',
+        series: 'Demon Slayer',
+        character: 'test',
+        material: 'test',
+        productType: 'Accessories',
+        manufacturer: 'test',
+        dimensions: 'test',
+        price: 15.99,
+        instock: 5
+    },
+    {
+        id: 7,
+        image: 'anya.jpg',
+        name: 'Sword Art Online (Alicization) - Yuuki Asuna Keychain',
+        series: 'Sword Art Online',
+        character: 'test',
+        material: 'test',
+        productType: 'Other',
+        manufacturer: 'test',
+        dimensions: 'test',
+        price: 7.99,
+        instock: 5
+    }
+];
