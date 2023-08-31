@@ -7,7 +7,7 @@ function renderProducts() {
             <div class="product-card">
                 <div class="product-image">
                     <a href="product_details.html?id=${product.id}" class="view-details">
-                        <img src="images/${product.image}">
+                        <img src="images/${product.image}" alt="Image">
                     </a>
                 </div>
                 <div class="product-details">
@@ -24,5 +24,11 @@ function renderProducts() {
     });
 }
 renderProducts();
+
+// Toggle Mobile Menu
+document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+    document.querySelector('.mobile-menu').classList.toggle('active');
+});
+
 
 

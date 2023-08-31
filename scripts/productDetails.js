@@ -9,7 +9,7 @@ function renderItem() {
     newDiv.innerHTML = `
                 <div class="product-grid">
                     <div >
-                        <img src="images/${selectedProduct.image}" class="details-image" alt="">
+                        <img src="images/${selectedProduct.image}" class="details-image" alt="Image">
                     </div>
                     <div class="product-info">
                     <h2 class="details-title">${selectedProduct.name}</h2>

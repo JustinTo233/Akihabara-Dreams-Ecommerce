@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Goods Store</title>
     <link rel="stylesheet" href="style.css">
@@ -13,48 +12,56 @@
 
 <body>
     <header>
-        <a href="index.html"><img src="./images/WebLogo.png"></a>
-        <div class="middle-header">
+        <a href="index.html" class="logo">
+            <img src="./images/WebLogo.png" alt="Akihabara Dreams" width="100px" height="100px">
+        </a>
+        <nav class="middle-header">
             <ul>
                 <li><a href="#">New</a></li>
                 <li><a href="#">Pre-Order</a></li>
-                <li><a href="index.html">All Products</a>
-                    <div></div>
-                    <div class="sub-menu-1">
-                        <ul>
-                            <li><a href="#" value="figure">Figure</a></li>
-                            <li><a href="#" value="acrylic-stand">Acrylic Stands</a></li>
-                            <li><a href="#" value="charms">Charms</a></li>
-                            <li><a href="#" value="clothing">Clothing</a></li>
-                            <li><a href="#" value="plushies">Plushies</a></li>
-                            <li><a href="#" value="accessories">Accessories</a></li>
-                            <li><a href="#" value="other">Other</a></li>
-                        </ul>
-                    </div>
+                <li class="menu-item-has-children"><a href="index.html">All Products</a>
+                    <ul class="sub-menu-1">
+                        <li><a href="#" value="figure">Figure</a></li>
+                        <li><a href="#" value="acrylic-stand">Acrylic Stands</a></li>
+                        <li><a href="#" value="charms">Charms</a></li>
+                        <li><a href="#" value="clothing">Clothing</a></li>
+                        <li><a href="#" value="plushies">Plushies</a></li>
+                        <li><a href="#" value="accessories">Accessories</a></li>
+                        <li><a href="#" value="other">Other</a></li>
+                    </ul>
                 </li>
-                <li><a href="#">Featured Series</a>
-                    <div class="sub-menu-2">
-                        <ul>
-                            <li><a href="#" value="spyxfamily">Spy x Family</a></li>
-                            <li><a href="#" value="one-piece">One Piece</a></li>
-                            <li><a href="#" value="naruto">Naruto</a></li>
-                            <li><a href="#" value="myheroacademia">My Hero Academia</a></li>
-                            <li><a href="#" value="thequintessentialquintuplets">The Quintessential Quintuplets</a></li>
-                            <li><a href="#" value="demonslayer">Demon Slayer</a></li>
-                            <li><a href="#" value="jujutsukaisen">Jujutsu Kaisen</a></li>
-                        </ul>
-                    </div>
+                <li class="menu-item-has-children"><a href="#">Featured Series</a>
+                    <ul class="sub-menu-2">
+                        <li><a href="#" value="spyxfamily">Spy x Family</a></li>
+                        <li><a href="#" value="one-piece">One Piece</a></li>
+                        <li><a href="#" value="naruto">Naruto</a></li>
+                        <li><a href="#" value="myheroacademia">My Hero Academia</a></li>
+                        <li><a href="#" value="thequintessentialquintuplets">The Quintessential Quintuplets</a></li>
+                        <li><a href="#" value="demonslayer">Demon Slayer</a></li>
+                        <li><a href="#" value="jujutsukaisen">Jujutsu Kaisen</a></li>
+                    </ul>
                 </li>
             </ul>
-        </div>
-        <ul class="right-header">
-            <li><input type="search"></li>
-            <li>
-                <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i>
+        </nav>
+        <div class="right-header">
+            <div><input type="search"></div>
+            <div>
+                <a href="cart.html"><i class="fa-solid fa-cart-shopping fa-lg"></i>
                     <span class="cart-counter"></span>
                 </a>
-            </li>
-        </ul>
+            </div>
+
+            <div>
+                <a class="mobile-menu-icon">
+                    <i class="fa-solid fa-bars fa-2xl">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </i>
+                </a>
+            </div>
+        </div>
     </header>
     <main>
         <section id="product-listing">
