@@ -182,14 +182,14 @@ header {
   border-radius: 10px;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 895px) {
   .right-header .mobile-menu-icon {
     display: flex;
   }
   .middle-header {
     display: none;
   }
-}
+} */
 /* product-listing-container */
 main {
   padding: 2rem;
