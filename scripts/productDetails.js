@@ -3,6 +3,7 @@ const productId = parseInt(urlParams.get('id'));
 const selectedProduct = products.find(product => product.id === productId);
 const productDetailsContainer = document.querySelector(".product-details-container");
 
+document.title = selectedProduct.name;
 // Render items onto cart
 function renderItem() {
     let newDiv = document.createElement('div');
@@ -35,6 +36,7 @@ function renderItem() {
                     <button class="add-to-cart" onclick="addToCart(${selectedProduct.id})">
                         Add to cart
                     </button>
+                    <div class="details-quantity">Quantity: <div>
                     </div>
                 </div>
                 `;

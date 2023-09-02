@@ -48,6 +48,7 @@ function renderSubtotal() {
 
 // render the cart items onto the cart
 function renderCartItems() {
+    let totalPerItems = 0;
     const cartItems = document.querySelector('.table');
 
     cartItems.innerHTML = "";
@@ -60,14 +61,30 @@ function renderCartItems() {
         <th></th>
     `;
     cart.forEach((item) => {
+        totalPerItems = item.price * item.quantity;
         cartItems.innerHTML += `
                 <td>
-                    <img class="cart-product-image" src="images/${item.image}">
+                    <a href="product_details.html?id=${item.id}">
+                        <img class="cart-product-image" src="images/${item.image}">
+                    </a>
                 </td>
-                <td class="cart-product-name">${item.name}</td>
+                <td >
+                    <a href="product_details.html?id=${item.id}" class="cart-product-name">
+                    ${item.name}
+                    </a>
+                </td>
                 <td class="cart-product-price">$${item.price}</td>
-                <td class="cart-product-quantity">${item.quantity}</td>
-                <td class="cart-product-total">$${item.quantity}</td>
+                <div>
+                
+                <td class="cart-product-quantity">
+                    <div class="product-quantity">
+                        <span class="btn minus" onclick="changeQuantity('minus', ${item.id})">-</span>
+                        <span class="quantity-amount">${item.quantity}</span>
+                        <span class="btn plus" onclick="changeQuantity('plus', ${item.id})">+</span>           
+                    </div>
+                </td>
+                </div>
+                <td class="cart-product-total">$${totalPerItems.toFixed(2)}</td>
                 <td onclick="removeItemFromCart(${item.id})">
                 <i class="fa-solid fa-trash fa-xl"></i>
                 </td>
