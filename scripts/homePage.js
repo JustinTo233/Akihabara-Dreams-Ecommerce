@@ -1,6 +1,5 @@
 const productsList = document.querySelector('.products');
 
-// Rendering items onto the cart
 function renderProducts() {
     products.forEach((product) => {
         productsList.innerHTML += `

@@ -4,7 +4,7 @@ const selectedProduct = products.find(product => product.id === productId);
 const productDetailsContainer = document.querySelector(".product-details-container");
 
 document.title = selectedProduct.name;
-// Render items onto cart
+
 function renderItem() {
     let newDiv = document.createElement('div');
     newDiv.innerHTML = `

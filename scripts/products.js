@@ -10,7 +10,8 @@ const products = [
         manufacturer: 'test',
         dimensions: 'test',
         price: 24.99,
-        instock: 5
+        instock: 5,
+        anime: 'fate-grand-order'
     },
     {
         id: 2,
@@ -23,7 +24,8 @@ const products = [
         manufacturer: 'test',
         dimensions: 'test',
         price: 18.99,
-        instock: 5
+        instock: 5,
+        anime: 'one-piece'
     },
     {
         id: 3,
@@ -36,7 +38,8 @@ const products = [
         manufacturer: 'test',
         dimensions: 'test',
         price: 21.99,
-        instock: 5
+        instock: 5,
+        anime: 'hatsune-miku'
     },
     {
         id: 4,
@@ -49,7 +52,8 @@ const products = [
         manufacturer: 'test',
         dimensions: 'test',
         price: 30.99,
-        instock: 5
+        instock: 5,
+        anime: 'my-hero-academia'
     },
     {
         id: 5,
@@ -62,7 +66,8 @@ const products = [
         manufacturer: 'test',
         dimensions: 'test',
         price: 10.99,
-        instock: 5
+        instock: 5,
+        anime: 'the-quintessential-quintuplets'
     },
     {
         id: 6,
@@ -75,19 +80,49 @@ const products = [
         manufacturer: 'test',
         dimensions: 'test',
         price: 15.99,
-        instock: 5
+        instock: 5,
+        anime: 'demon-slayer'
     },
     {
         id: 7,
         image: 'anya.jpg',
         name: 'Sword Art Online (Alicization) - Yuuki Asuna Keychain',
-        series: 'Sword Art Online',
+        series: 'Sword Art Online (Alicization)',
         character: 'test',
         material: 'test',
         productType: 'Other',
         manufacturer: 'test',
         dimensions: 'test',
         price: 7.99,
-        instock: 5
+        instock: 5,
+        anime: 'sword-art-online'
+    },
+    {
+        id: 8,
+        image: 'anya.jpg',
+        name: 'Demon Slayer - Tanjiro Kamado (2nd re-run) Nendoroid',
+        series: 'Demon Slayer',
+        character: 'test',
+        material: 'test',
+        productType: 'Accessories',
+        manufacturer: 'test',
+        dimensions: 'test',
+        price: 15.99,
+        instock: 5,
+        anime: 'demon-slayer'
+    },
+    {
+        id: 9,
+        image: 'anya.jpg',
+        name: 'Demon Slayer - Tanjiro Kamado (2nd re-run) Nendoroid',
+        series: 'Demon Slayer',
+        character: 'test',
+        material: 'test',
+        productType: 'Accessories',
+        manufacturer: 'test',
+        dimensions: 'test',
+        price: 15.99,
+        instock: 5,
+        anime: 'demon-slayer'
     }
 ];
