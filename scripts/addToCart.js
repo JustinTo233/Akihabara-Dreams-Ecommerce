@@ -65,7 +65,7 @@ function renderCartItems() {
         cartItems.innerHTML += `
                 <td>
                     <a href="product_details.html?id=${item.id}">
-                        <img class="cart-product-image" src="images/${item.image}">
+                        <img class="cart-product-image" src="${item.image[0]}">
                     </a>
                 </td>
                 <td >

@@ -1,46 +1,144 @@
 const urlParams = new URLSearchParams(window.location.search);
-const productId = parseInt(urlParams.get('id'));
-const selectedProduct = products.find(product => product.id === productId);
-const productDetailsContainer = document.querySelector(".product-details-container");
+const productId = parseInt(urlParams.get("id"));
+const selectedProduct = products.find((product) => product.id === productId);
+const productDetailsContainer = document.querySelector(
+  ".product-details-container"
+);
 
 document.title = selectedProduct.name;
 
 function renderItem() {
-    let newDiv = document.createElement('div');
+  if (selectedProduct.productType === "Clothing") {
+    let newDiv = document.createElement("div");
     newDiv.innerHTML = `
-                <div class="product-grid">
-                    <div >
-                        <img src="images/${selectedProduct.image}" class="details-image" alt="Image">
-                    </div>
-                    <div class="product-info">
-                    <h2 class="details-title">${selectedProduct.name}</h2>
-                    <p class="details-price">$${selectedProduct.price.toString()}</p>
-                    <p class="details-series">
-                    <strong>Series: </strong>
-                    <span>${selectedProduct.series}</span></p>
-                    <p class="details-character">
-                    <strong>Character: </strong>
-                    <span>${selectedProduct.character}</span></p>
-                    <p class="details-material">
-                    <strong>Material: </strong>
-                    <span>${selectedProduct.material}</span></p>
-                    <p class="details-productType">
-                    <strong>Product Type: </strong>
-                    <span>${selectedProduct.productType}</span></p>
-                    <p class="details-manufacturer">
-                    <strong>Manufacturer: </strong>
-                    <span>${selectedProduct.manufacturer}</span></p>
-                    <p class="details-dimensions">
-                    <strong>Dimensions: </strong>
-                    <span>${selectedProduct.dimensions}</span></p>
-                    <button class="add-to-cart" onclick="addToCart(${selectedProduct.id})">
-                        Add to cart
-                    </button>
-                    <div class="details-quantity">Quantity: <div>
-                    </div>
-                </div>
+    <div class="product-grid">
+        <div class="image-slider">
+            <div class="slider-container">
+            <i class="fa-solid fa-angle-left prev-button" onclick="changeImage(-1)"></i>
+                <img src="${
+                  selectedProduct.image[0]
+                }" class="details-image" alt="Image" id="product-image">
+                <i class="fa-solid fa-angle-right next-button" onclick="changeImage(1)"></i>
+            </div>
+            <div class="image-counter">
+            <span class="current-image">1</span> / ${
+              selectedProduct.image.length
+            }
+          </div>
+        </div>
+        <div class="product-info">
+            <h2 class="details-title">${selectedProduct.name}</h2>
+            <p class="details-price">$${selectedProduct.price.toString()}</p>
+            <p class="details-series">
+            <strong>Series: </strong>
+            <span>${selectedProduct.series}</span></p>
+            <p class="details-character">
+            <strong>Character: </strong>
+            <span>${selectedProduct.character}</span></p>
+            <p class="details-material">
+            <strong>Material: </strong>
+            <span>${selectedProduct.material}</span></p>
+            <p class="details-productType">
+            <strong>Product Type: </strong>
+            <span>${selectedProduct.productType}</span></p>
+            <p class="details-manufacturer">
+            <strong>Manufacturer: </strong>
+            <span>${selectedProduct.manufacturer}</span></p>
+            <p class="details-dimensions">
+            <strong>Dimensions: </strong>
+            <span>${selectedProduct.dimensions}</span></p>
+            <div class="details-size">Size: 
+                <span class="clothing-size">S</span>
+                <span class="clothing-size">M</span>
+                <span class="clothing-size">L</span>
+                <span class="clothing-size">XL</span>
+            </div>
+            <div class="details-quantity">Quantity: <div>
+        </div>
+        <button class="add-to-cart" onclick="addToCart(${selectedProduct.id})">
+            Add to cart
+        </button>
+    </div>
                 `;
     productDetailsContainer.appendChild(newDiv);
-}
+  } else {
+    let newDiv = document.createElement("div");
+    newDiv.innerHTML = `
+      <div class="product-grid">
+        <div class="image-slider">
+            <div class="slider-container">
+            <i class="fa-solid fa-angle-left prev-button" onclick="changeImage(-1)"></i>
+                <img src="${
+                  selectedProduct.image[0]
+                }" class="details-image" alt="Image" id="product-image">
+                <i class="fa-solid fa-angle-right next-button" onclick="changeImage(1)"></i>
+            </div>
+            <div class="image-counter">
+            <span class="current-image">1</span> / ${
+              selectedProduct.image.length
+            }
+            </div>
+        </div>
+        <div class="product-info">
+            <h2 class="details-title">${selectedProduct.name}</h2>
+            <p class="details-price">$${selectedProduct.price.toString()}</p>
+            <p class="details-series">
+            <strong>Series: </strong>
+            <span>${selectedProduct.series}</span></p>
+            <p class="details-character">
+            <strong>Character: </strong>
+            <span>${selectedProduct.character}</span></p>
+            <p class="details-material">
+            <strong>Material: </strong>
+            <span>${selectedProduct.material}</span></p>
+            <p class="details-productType">
+            <strong>Product Type: </strong>
+            <span>${selectedProduct.productType}</span></p>
+            <p class="details-manufacturer">
+            <strong>Manufacturer: </strong>
+            <span>${selectedProduct.manufacturer}</span></p>
+            <p class="details-dimensions">
+            <strong>Dimensions: </strong>
+            <span>${selectedProduct.dimensions}</span></p>
+            <div class="details-quantity">Quantity: <div>
+        </div>
+        <button class="add-to-cart" onclick="addToCart(${selectedProduct.id})">
+            Add to cart
+        </button>
+      </div>
+                  `;
+    productDetailsContainer.appendChild(newDiv);
+  }
 
+  let currentImageIndex = 0;
+  const imageElement = document.querySelector(".details-image");
+  const images = selectedProduct.image;
+  const currentImageSpan = document.querySelector(".current-image");
+
+  function updateImageCounter() {
+    currentImageSpan.textContent = `${currentImageIndex + 1}`;
+  }
+
+  function changeImage(offset) {
+    currentImageIndex += offset;
+
+    if (currentImageIndex < 0) {
+      currentImageIndex = images.length - 1;
+    } else if (currentImageIndex >= images.length) {
+      currentImageIndex = 0;
+    }
+    imageElement.src = images[currentImageIndex];
+
+    updateImageCounter();
+  }
+
+  // Initial image slider setup
+  if (images.length > 1) {
+    const prevButton = document.querySelector(".prev-button");
+    const nextButton = document.querySelector(".next-button");
+
+    prevButton.addEventListener("click", () => changeImage(-1));
+    nextButton.addEventListener("click", () => changeImage(1));
+  }
+}
 renderItem();
