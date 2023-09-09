@@ -8,7 +8,7 @@ const productDetailsContainer = document.querySelector(
 document.title = selectedProduct.name;
 
 function renderItem() {
-  if (selectedProduct.productType === "Clothing") {
+  if (selectedProduct.product === "clothing") {
     let newDiv = document.createElement("div");
     newDiv.innerHTML = `
     <div class="product-grid">
@@ -27,33 +27,33 @@ function renderItem() {
           </div>
         </div>
         <div class="product-info">
-            <h2 class="details-title">${selectedProduct.name}</h2>
-            <p class="details-price">$${selectedProduct.price.toString()}</p>
-            <p class="details-series">
+            <h2 class="details-title mb-15">${selectedProduct.name}</h2>
+            <p class="details-price mb-15">$${selectedProduct.price.toString()}</p>
+            <p class="details-series mb-15">
             <strong>Series: </strong>
             <span>${selectedProduct.series}</span></p>
-            <p class="details-character">
+            <p class="details-character mb-15">
             <strong>Character: </strong>
             <span>${selectedProduct.character}</span></p>
-            <p class="details-material">
+            <p class="details-material mb-15">
             <strong>Material: </strong>
             <span>${selectedProduct.material}</span></p>
-            <p class="details-productType">
+            <p class="details-productType mb-15">
             <strong>Product Type: </strong>
             <span>${selectedProduct.productType}</span></p>
-            <p class="details-manufacturer">
+            <p class="details-manufacturer mb-15">
             <strong>Manufacturer: </strong>
             <span>${selectedProduct.manufacturer}</span></p>
-            <p class="details-dimensions">
-            <strong>Dimensions: </strong>
+            <p class="details-dimensions mb-15">
+            <strong>Dimensions (approx): </strong>
             <span>${selectedProduct.dimensions}</span></p>
-            <div class="details-size">Size: 
-                <span class="clothing-size">S</span>
-                <span class="clothing-size">M</span>
-                <span class="clothing-size">L</span>
-                <span class="clothing-size">XL</span>
+            <div class="details-size mb-15">Size: 
+                <span class="clothing-size">${selectedProduct.sizes[0]}</span>
+                <span class="clothing-size">${selectedProduct.sizes[1]}</span>
+                <span class="clothing-size">${selectedProduct.sizes[2]}</span>
+                <span class="clothing-size">${selectedProduct.sizes[3]}</span>
             </div>
-            <div class="details-quantity">Quantity: <div>
+            <div class="details-quantity mb-15">Quantity: <div>
         </div>
         <button class="add-to-cart" onclick="addToCart(${selectedProduct.id})">
             Add to cart
@@ -80,27 +80,27 @@ function renderItem() {
             </div>
         </div>
         <div class="product-info">
-            <h2 class="details-title">${selectedProduct.name}</h2>
-            <p class="details-price">$${selectedProduct.price.toString()}</p>
-            <p class="details-series">
+            <h2 class="details-title mb-15">${selectedProduct.name}</h2>
+            <p class="details-price mb-15">$${selectedProduct.price.toString()}</p>
+            <p class="details-series mb-15">
             <strong>Series: </strong>
             <span>${selectedProduct.series}</span></p>
-            <p class="details-character">
+            <p class="details-character mb-15">
             <strong>Character: </strong>
             <span>${selectedProduct.character}</span></p>
-            <p class="details-material">
+            <p class="details-material mb-15">
             <strong>Material: </strong>
             <span>${selectedProduct.material}</span></p>
-            <p class="details-productType">
+            <p class="details-productType mb-15">
             <strong>Product Type: </strong>
             <span>${selectedProduct.productType}</span></p>
-            <p class="details-manufacturer">
+            <p class="details-manufacturer mb-15">
             <strong>Manufacturer: </strong>
             <span>${selectedProduct.manufacturer}</span></p>
-            <p class="details-dimensions">
-            <strong>Dimensions: </strong>
+            <p class="details-dimensions mb-15">
+            <strong>Dimensions (approx): </strong>
             <span>${selectedProduct.dimensions}</span></p>
-            <div class="details-quantity">Quantity: <div>
+            <div class="details-quantity mb-15">Quantity: <div>
         </div>
         <button class="add-to-cart" onclick="addToCart(${selectedProduct.id})">
             Add to cart
