@@ -7,6 +7,7 @@ Akihabara Dreams is an e-commerce platform designed to provide users with a conv
 - [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
+- [Preview](#preview)
 
 ## Introduction
 
@@ -26,3 +27,9 @@ To run Akihabara Dreams E-commerce locally, follow these steps:
 1. Clone this repository to your local machine.
    ```bash
    git clone https://github.com/JustinTo233/Akihabara_Dreams_E-commerce.git
+
+## Preview
+Front Page
+![AkihabaraDreamFrontPage](https://github.com/JustinTo233/Akihabara_Dreams_E-commerce/assets/74964260/faf197af-8980-4ed4-8c5c-39e24a43d6ad)
+Featured Series Page
+![FeaturedSeriesPage](https://github.com/JustinTo233/Akihabara_Dreams_E-commerce/assets/74964260/3bc15cbb-d54d-4ff9-a46e-ac0243bdf31b)
