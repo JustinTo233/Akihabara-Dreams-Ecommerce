@@ -607,15 +607,18 @@ footer {
 .series-card {
     background-color: #fff;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
-.series-card img {
+.series-image {
     width: 100%;
     height: auto;
-    /* Consider this */
+}
+.series-card a {
+    text-decoration: none;
 }
 .series-name {
-    position: relative;
-    font-size: 17px;
+    font-size: 20px;
     margin-top: 10px;
     color: #333;
 }
@@ -624,14 +627,12 @@ footer {
     font-weight: bold;
     margin-top: 5px;
 }
-.series-card a {
-    margin-top: auto;
-    align-self: flex-end;
-    text-decoration: none;
-}
+
 .series-details {
-    text-align: center;
-    padding-top: 25px;
+    /* padding-top: 25px; */
+    flex-direction: column;
+    position: ;
+    display: flex;
 }
 .more-btn {
     background-color: #333;
