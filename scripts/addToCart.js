@@ -3,21 +3,21 @@ const subTotal = document.querySelector('.sub-total');
 const totalItemsInCart = document.querySelector('.cart-counter');
 
 // cart array that stores into local storage
-let cart = JSON.parse(localStorage.getItem("CART")) || [];
+let cart = JSON.parse(localStorage.getItem('CART')) || [];
 updateCart();
 
 // function to add the products to the cart
 function addToCart(id) {
     // check if product already exists in cart
     if (cart.some((item) => item.id === id)) {
-        changeQuantity("plus", id);
+        changeQuantity('plus', id);
     } else {
         const item = products.find((product) => product.id === id);
 
         cart.push({
             ...item,
             quantity: 1
-        })
+        });
     }
 
     updateCart();
@@ -29,7 +29,7 @@ function updateCart() {
     renderSubtotal();
 
     // save cart to local storage
-    localStorage.setItem("CART", JSON.stringify(cart))
+    localStorage.setItem('CART', JSON.stringify(cart));
 }
 
 // render the sub total of the whole cart
@@ -42,7 +42,9 @@ function renderSubtotal() {
         totalItems += item.quantity;
     });
 
-    subTotal.innerHTML = `Subtotal (${totalItems} items): $${totalPrice.toFixed(2)}`;
+    subTotal.innerHTML = `Subtotal (${totalItems} items): $${totalPrice.toFixed(
+        2
+    )}`;
     totalItemsInCart.innerHTML = totalItems;
 }
 
@@ -51,7 +53,7 @@ function renderCartItems() {
     let totalPerItems = 0;
     const cartItems = document.querySelector('.table');
 
-    cartItems.innerHTML = "";
+    cartItems.innerHTML = '';
     cartItems.innerHTML = `
         <tr class="cart-header">
         <th colspan="2">PRODUCT</th>
@@ -69,7 +71,9 @@ function renderCartItems() {
                     </a>
                 </td>
                 <td width="30%">
-                    <a href="product_details.html?id=${item.id}" class="cart-product-name">
+                    <a href="product_details.html?id=${
+                        item.id
+                    }" class="cart-product-name">
                     ${item.name}
                     </a>
                 </td>
@@ -78,15 +82,21 @@ function renderCartItems() {
                 
                 <td class="cart-product-quantity">
                     <div class="product-quantity">
-                        <span class="btn minus" onclick="changeQuantity('minus', ${item.id})">-</span>
+                        <span class="btn minus" onclick="changeQuantity('minus', ${
+                            item.id
+                        })">-</span>
                         <span class="quantity-amount">${item.quantity}</span>
-                        <span class="btn plus" onclick="changeQuantity('plus', ${item.id})">+</span>           
+                        <span class="btn plus" onclick="changeQuantity('plus', ${
+                            item.id
+                        })">+</span>           
                     </div>
                 </td>
                 </div>
                 <td class="cart-product-total">$${totalPerItems.toFixed(2)}</td>
-                <td onclick="removeItemFromCart(${item.id})">
-                <i class="fa-solid fa-trash fa-xl"></i>
+                <td>
+                <i onclick="removeItemFromCart(${
+                    item.id
+                })" class="fa-solid fa-trash fa-xl"></i>
                 </td>
         `;
     });
@@ -105,16 +115,16 @@ function changeQuantity(action, id) {
         let quantity = item.quantity;
 
         if (item.id === id) {
-            if (action === "minus" && quantity > 1) {
+            if (action === 'minus' && quantity > 1) {
                 quantity--;
-            } else if (action === "plus" && quantity < item.instock) {
+            } else if (action === 'plus' && quantity < item.instock) {
                 quantity++;
             }
         }
 
         return {
             ...item,
-            quantity,
+            quantity
         };
     });
 

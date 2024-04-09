@@ -1,28 +1,28 @@
 const urlParams = new URLSearchParams(window.location.search);
-const productId = parseInt(urlParams.get("id"));
+const productId = parseInt(urlParams.get('id'));
 const selectedProduct = products.find((product) => product.id === productId);
 const productDetailsContainer = document.querySelector(
-  ".product-details-container"
+    '.product-details-container'
 );
 
 document.title = selectedProduct.name;
 
 function renderItem() {
-  if (selectedProduct.product === "clothing") {
-    let newDiv = document.createElement("div");
-    newDiv.innerHTML = `
+    if (selectedProduct.product === 'clothing') {
+        let newDiv = document.createElement('div');
+        newDiv.innerHTML = `
     <div class="product-grid">
         <div class="image-slider">
             <div class="slider-container">
             <i class="fa-solid fa-angle-left prev-button" onclick="changeImage(-1)"></i>
                 <img src="${
-                  selectedProduct.image[0]
+                    selectedProduct.image[0]
                 }" class="details-image" alt="Image" id="product-image">
                 <i class="fa-solid fa-angle-right next-button" onclick="changeImage(1)"></i>
             </div>
             <div class="image-counter">
             <span class="current-image">1</span> / ${
-              selectedProduct.image.length
+                selectedProduct.image.length
             }
           </div>
         </div>
@@ -60,22 +60,22 @@ function renderItem() {
         </button>
     </div>
                 `;
-    productDetailsContainer.appendChild(newDiv);
-  } else {
-    let newDiv = document.createElement("div");
-    newDiv.innerHTML = `
+        productDetailsContainer.appendChild(newDiv);
+    } else {
+        let newDiv = document.createElement('div');
+        newDiv.innerHTML = `
       <div class="product-grid">
         <div class="image-slider">
             <div class="slider-container">
             <i class="fa-solid fa-angle-left prev-button" onclick="changeImage(-1)"></i>
                 <img src="${
-                  selectedProduct.image[0]
+                    selectedProduct.image[0]
                 }" class="details-image" alt="Image" id="product-image">
                 <i class="fa-solid fa-angle-right next-button" onclick="changeImage(1)"></i>
             </div>
             <div class="image-counter">
             <span class="current-image">1</span> / ${
-              selectedProduct.image.length
+                selectedProduct.image.length
             }
             </div>
         </div>
@@ -107,38 +107,38 @@ function renderItem() {
         </button>
       </div>
                   `;
-    productDetailsContainer.appendChild(newDiv);
-  }
-
-  let currentImageIndex = 0;
-  const imageElement = document.querySelector(".details-image");
-  const images = selectedProduct.image;
-  const currentImageSpan = document.querySelector(".current-image");
-
-  function updateImageCounter() {
-    currentImageSpan.textContent = `${currentImageIndex + 1}`;
-  }
-
-  function changeImage(offset) {
-    currentImageIndex += offset;
-
-    if (currentImageIndex < 0) {
-      currentImageIndex = images.length - 1;
-    } else if (currentImageIndex >= images.length) {
-      currentImageIndex = 0;
+        productDetailsContainer.appendChild(newDiv);
     }
-    imageElement.src = images[currentImageIndex];
 
-    updateImageCounter();
-  }
+    let currentImageIndex = 0;
+    const imageElement = document.querySelector('.details-image');
+    const images = selectedProduct.image;
+    const currentImageSpan = document.querySelector('.current-image');
 
-  // Initial image slider setup
-  if (images.length > 1) {
-    const prevButton = document.querySelector(".prev-button");
-    const nextButton = document.querySelector(".next-button");
+    function updateImageCounter() {
+        currentImageSpan.textContent = `${currentImageIndex + 1}`;
+    }
 
-    prevButton.addEventListener("click", () => changeImage(-1));
-    nextButton.addEventListener("click", () => changeImage(1));
-  }
+    function changeImage(offset) {
+        currentImageIndex += offset;
+
+        if (currentImageIndex < 0) {
+            currentImageIndex = images.length - 1;
+        } else if (currentImageIndex >= images.length) {
+            currentImageIndex = 0;
+        }
+        imageElement.src = images[currentImageIndex];
+
+        updateImageCounter();
+    }
+
+    // Initial image slider setup
+    if (images.length > 1) {
+        const prevButton = document.querySelector('.prev-button');
+        const nextButton = document.querySelector('.next-button');
+
+        prevButton.addEventListener('click', () => changeImage(-1));
+        nextButton.addEventListener('click', () => changeImage(1));
+    }
 }
 renderItem();
